@@ -11,7 +11,7 @@ public class PlayerImmediateJumpController : MonoBehaviour
     {
         //Apply jump force
         //Preferably interact with physics in FixedUpdate() 
-        if (playerInputController.JumpInput && groundChecker.IsGrounded)
+        if (playerInputController.JumpInputDown && groundChecker.IsGrounded)
             myRigidbody.AddForce(Vector3.up * jumpForce);
     }
 }
