@@ -161,6 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9128702778750323794}
   - component: {fileID: 3905610556204978792}
+  - component: {fileID: 2360536887098368764}
   m_Layer: 9
   m_Name: AI+Commands
   m_TagString: Untagged
@@ -199,3 +200,16 @@ MonoBehaviour:
   jumpCommandDown: 0
   jumpCommandUp: 0
   jumpCommand: 0
+--- !u!114 &2360536887098368764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023461971292012283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a60704df529a684dbe0098bfabea0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commandContainer: {fileID: 3905610556204978792}
