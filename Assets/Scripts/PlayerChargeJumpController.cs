@@ -13,6 +13,11 @@ public class PlayerChargeJumpController : MonoBehaviour
 
     private void Update()
     {
+        HandleJump();
+    }
+
+    private void HandleJump()
+    {
         if (playerInputController.JumpInput)
             jumpCharge += Time.deltaTime / chargeTime;
 

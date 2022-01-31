@@ -10,6 +10,11 @@ public class PlayerWalkController : MonoBehaviour
 
     private void Update()
     {
+        HandleWalking();
+    }
+
+    private void HandleWalking()
+    {
         //Slower move speed while charging a jump.
         var currentMoveSpeed = moveSpeed;
         if (playerInputController.JumpInput && groundChecker.IsGrounded)

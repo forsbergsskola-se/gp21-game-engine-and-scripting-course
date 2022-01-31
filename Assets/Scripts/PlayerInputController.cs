@@ -9,6 +9,11 @@ public class PlayerInputController : MonoBehaviour
 
     private void Update()
     {
+        GetInput();
+    }
+
+    private void GetInput()
+    {
         MoveInput = Input.GetAxis("Horizontal");
         JumpInputDown = Input.GetKeyDown(KeyCode.Space);
         JumpInputUp = Input.GetKeyUp(KeyCode.Space);

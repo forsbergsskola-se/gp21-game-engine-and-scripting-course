@@ -9,6 +9,11 @@ public class PlayerImmediateJumpController : MonoBehaviour
 
     private void Update()
     {
+        HandleJump();
+    }
+
+    private void HandleJump()
+    {
         //Apply jump force
         //Preferably interact with physics in FixedUpdate() 
         if (playerInputController.JumpInputDown && groundChecker.IsGrounded)
