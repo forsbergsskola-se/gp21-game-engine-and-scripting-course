@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerWalkController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody myRigidbody;
+    //TODO Remove MovementApplier and return to applying velocities and forces directly in the walk and jump scripts?
+    [SerializeField] private MovementApplier movementApplier;
     [SerializeField] private CommandContainer commandContainer;
     [SerializeField] private GroundChecker groundChecker;
     [SerializeField] private float moveSpeed = 5f;
@@ -20,6 +21,6 @@ public class PlayerWalkController : MonoBehaviour
         if (commandContainer.jumpCommand && groundChecker.IsGrounded)
             currentMoveSpeed *= chargingMoveSpeedFactor;
 
-        myRigidbody.velocity = new Vector3(commandContainer.walkCommand * currentMoveSpeed, myRigidbody.velocity.y, 0);
+        movementApplier.SetHorizontalVelocity(commandContainer.walkCommand * currentMoveSpeed);
     }
 }
