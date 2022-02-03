@@ -5,9 +5,12 @@ public class WalkController : MonoBehaviour
     //TODO Remove MovementApplier and return to applying velocities and forces directly in the walk and jump scripts?
     [SerializeField] private Rigidbody myRigidbody;
     [SerializeField] private CommandContainer commandContainer;
+
     [SerializeField] private GroundChecker groundChecker;
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float chargingMoveSpeedFactor = 0.5f;
+
+    // [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private WalkSpeedSO walkSpeedSo;
+    [SerializeField] private float chargingWalkSpeedFactor = 0.5f;
 
     private void Update()
     {
@@ -17,9 +20,9 @@ public class WalkController : MonoBehaviour
     private void HandleWalking()
     {
         //Slower move speed while charging a jump.
-        var currentMoveSpeed = moveSpeed;
+        var currentMoveSpeed = walkSpeedSo.WalkSpeed;
         if (commandContainer.jumpCommand && groundChecker.IsGrounded)
-            currentMoveSpeed *= chargingMoveSpeedFactor;
+            currentMoveSpeed *= chargingWalkSpeedFactor;
 
         myRigidbody.velocity = new Vector3(commandContainer.walkCommand * currentMoveSpeed, myRigidbody.velocity.y, 0);
     }
