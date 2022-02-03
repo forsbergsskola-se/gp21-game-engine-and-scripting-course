@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 8302052347848706758}
   - component: {fileID: 8302052347848706781}
   - component: {fileID: 2300130765856828827}
-  - component: {fileID: 7776962477808349097}
   - component: {fileID: 5968906387652907904}
   - component: {fileID: 8302052347848706783}
   - component: {fileID: 8302052347848706780}
@@ -196,19 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec8bb61600ca784b829b1d68a342422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7776962477808349097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8302052347848706759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b50f193c9e6a443b8ff6fe178fd4f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidbody: {fileID: 8302052347848706781}
 --- !u!114 &5968906387652907904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 8302052347848706781}
-  movementApplier: {fileID: 7776962477808349097}
   commandContainer: {fileID: 6257492668478131305}
   groundChecker: {fileID: 5968906387652907904}
   moveSpeed: 5
@@ -256,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67259d527d4899644a945d6c2f49f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementApplier: {fileID: 7776962477808349097}
+  myRigidbody: {fileID: 8302052347848706781}
   commandContainer: {fileID: 6257492668478131305}
   groundChecker: {fileID: 5968906387652907904}
   jumpForce: 500
@@ -272,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693922cca5f82c54c8115a1864e6099d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementApplier: {fileID: 7776962477808349097}
+  myRigidbody: {fileID: 8302052347848706781}
   commandContainer: {fileID: 6257492668478131305}
   groundChecker: {fileID: 5968906387652907904}
   minimumJumpForce: 100
