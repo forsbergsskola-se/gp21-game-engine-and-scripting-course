@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerImmediateJumpController : MonoBehaviour
+public class ImmediateJumpController : MonoBehaviour
 {
     //TODO Remove MovementApplier and return to applying velocities and forces directly in the walk and jump scripts?
     [SerializeField] private Rigidbody myRigidbody;
