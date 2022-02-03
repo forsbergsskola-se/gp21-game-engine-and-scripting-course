@@ -5,5 +5,8 @@ using UnityEngine;
 public class WalkSpeedSO : ScriptableObject
 {
     [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float chargingWalkSpeedFactor = 0.5f;
+
     public float WalkSpeed => walkSpeed; //Shorthand lambda expression for a getter for walkSpeed.
+    public float ChargingWalkSpeedFactor => chargingWalkSpeedFactor;
 }
