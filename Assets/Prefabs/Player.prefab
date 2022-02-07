@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 8302052347848706783}
   - component: {fileID: 8302052347848706780}
   - component: {fileID: 1381424055867279206}
+  - component: {fileID: 1883789121}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -228,7 +229,6 @@ MonoBehaviour:
   commandContainer: {fileID: 6257492668478131305}
   groundChecker: {fileID: 5968906387652907904}
   walkSpeedSo: {fileID: 11400000, guid: ef3f7d39d64233f4c93ff8afb3f9fa8f, type: 2}
-  chargingWalkSpeedFactor: 0.5
 --- !u!114 &8302052347848706780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +245,21 @@ MonoBehaviour:
   commandContainer: {fileID: 6257492668478131305}
   groundChecker: {fileID: 5968906387652907904}
   jumpForce: 500
+  onJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameObjectToggler, Assembly-CSharp
+        m_MethodName: ToggleGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0asdasdfasfsdg
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1381424055867279206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +278,64 @@ MonoBehaviour:
   minimumJumpForce: 100
   maximumJumpForce: 1000
   chargeTime: 1
+  onChargeJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883789121}
+        m_TargetAssemblyTypeName: ScaleAnimation, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.25
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1883789121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302052347848706759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de53fa500cfb84b4e9878a8d49341590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 1
+  scaleAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

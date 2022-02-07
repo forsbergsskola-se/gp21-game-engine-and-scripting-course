@@ -149,8 +149,7 @@ MonoBehaviour:
   myRigidbody: {fileID: 1777604039955472756}
   commandContainer: {fileID: 3905610556204978792}
   groundChecker: {fileID: 7354638279012617319}
-  walkSpeedSo: {fileID: 11400000, guid: ef3f7d39d64233f4c93ff8afb3f9fa8f, type: 2}
-  chargingWalkSpeedFactor: 0.5
+  walkSpeedSo: {fileID: 11400000, guid: 1e07de2d28eaa1646bf289d86578fbfe, type: 2}
 --- !u!1 &9023461971292012283
 GameObject:
   m_ObjectHideFlags: 0
