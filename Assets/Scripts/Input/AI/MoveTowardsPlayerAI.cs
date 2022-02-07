@@ -4,6 +4,7 @@ public class MoveTowardsPlayerAI : MonoBehaviour
 {
     [SerializeField] private CommandContainer commandContainer;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private float playerNearDistance = 10f;
 
     private void Start()
     {
@@ -20,6 +21,16 @@ public class MoveTowardsPlayerAI : MonoBehaviour
 
     private void Update()
     {
+        // var distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        var distanceToPlayer = Mathf.Abs(playerTransform.position.x - transform.position.x); //Distance in X-direction only. Use absolute value to avoid negative distances.
+
+        //If the player is too far away: stop moving.
+        if (distanceToPlayer > playerNearDistance)
+        {
+            commandContainer.walkCommand = 0;
+            return;
+        }
+
         var directionToPlayer = playerTransform.position - transform.position;
         directionToPlayer.Normalize();
         var horizontalDirectionToPlayer = directionToPlayer.x;
