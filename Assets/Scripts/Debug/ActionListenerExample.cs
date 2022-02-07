@@ -13,6 +13,7 @@ public class ActionListenerExample : MonoBehaviour
         actionEmitter.onEmptyAction += EmptyActionMethod;
         actionEmitter.onRandomFloatAction += RandomFloatActionMethod;
         actionEmitter.onTransformAction += TransformActionMethod;
+        actionEmitter.onMultipleDataAction += MultipleDataActionMethod;
     }
 
     private void Unsubscribe()
@@ -20,10 +21,12 @@ public class ActionListenerExample : MonoBehaviour
         actionEmitter.onEmptyAction -= EmptyActionMethod;
         actionEmitter.onRandomFloatAction -= RandomFloatActionMethod;
         actionEmitter.onTransformAction -= TransformActionMethod;
+        actionEmitter.onMultipleDataAction -= MultipleDataActionMethod;
     }
 
     //It's not a requirement for the methods to be static. It just fit nicely in this case.
     private static void EmptyActionMethod() => Debug.Log("Empty action was emitted.");
     private static void RandomFloatActionMethod(float randomFloat) => Debug.Log($"Our random float is: {randomFloat}");
     private static void TransformActionMethod(Transform emittedTransform) => emittedTransform.position += Vector3.up;
+    private static void MultipleDataActionMethod(bool boolValue, int intValue) => Debug.Log($"Bool: {boolValue} Int: {intValue}");
 }
